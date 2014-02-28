@@ -58,16 +58,6 @@ mouse =
   px: 0
   py: 0
 
-
-update = ->
-  ctx.clearRect 0, 0, canvas.width, canvas.height
-
-  cloth.update()
-  cloth.draw()
-
-  requestAnimFrame update
-
-
 class Point
 
   constructor: (@x, @y) ->
@@ -199,6 +189,14 @@ class Cloth
     cloth.points[i].draw()  while i--
     ctx.stroke()
 
+
+update = ->
+  ctx.clearRect 0, 0, canvas.width, canvas.height
+
+  cloth.update()
+  cloth.draw()
+
+  requestAnimFrame update
 
 start = ->
 
